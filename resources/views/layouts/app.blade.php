@@ -72,9 +72,16 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+       @if(Auth::user()){
+            <div class="container">
+                <div id="content"></div>
+            </div>
+       }@else{
+            <div class="container">
+                @yield('content')
+            </div>
+       }@endif
+        <script src="{{ asset('js/app.js')}}"></script>
     </div>
 </body>
 </html>
